@@ -6,10 +6,19 @@ export default defineNuxtConfig({
     '~/plugins/test' // 引入刚刚定义的plugin
   ],
   modules: [
-    '@element-plus/nuxt'
+    '@element-plus/nuxt',
   ],
   css: [
-    '~/static/css/common.scss',
+    '~/static/styles/common.css',
+    '~/static/styles/normalize.css'
   ],
-
+  vite: {
+    css: {
+        preprocessorOptions: {
+            scss: {
+                additionalData: '@import "@/static/styles/theme.scss";'	
+            }
+        }
+    }
+  }
 })

@@ -1,0 +1,39 @@
+
+.w-1200{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.mb-30{
+    margin-bottom: 30px  !important;;
+}
+.p-b-60 {
+    padding-bottom: 60px !important;
+}
+@keyframes animation1 {
+    0% {
+        transform: translateY(0);
+    }
+    25% {
+        transform: translateY(-5px);
+    }
+    75% {
+        transform: translateY(5px);
+    }
+    0% {
+        transform: translateY(0);
+    }
+}
+@keyframes animation2 {
+    0% {
+        transform: translateY(0) scale(1) rotate(0);
+    }
+    25% {
+        transform: translateY(-5px) scale(1.1) rotate(-5deg);
+    }
+    75% {
+        transform: translateY(-5px) scale(1.1) rotate(5deg);
+    }
+    0% {
+        transform: translateY(0) scale(1) rotate(0);
+    }
+}
