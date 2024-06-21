@@ -1,13 +1,23 @@
 
 .w-1200{
     max-width: 1200px;
+
+    min-width: 1200px;
     margin: 0 auto;
 }
 .mb-30{
-    margin-bottom: 30px  !important;;
+    margin-bottom: 30px  !important;
+}
+.mb-60{
+    margin-bottom: 60px  !important;
 }
 .p-b-60 {
     padding-bottom: 60px !important;
+}
+.container-wrap{
+    padding: 0 15px;
+    width: 100%;
+    position: relative;
 }
 @keyframes animation1 {
     0% {

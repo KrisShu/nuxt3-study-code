@@ -44,11 +44,170 @@
 			</el-col>
 		</el-row>
 		<!--  -->
-		<section class="p-b-60">
-			
+		<section class="p-b-60 experience-wrap">
+			<el-row class="w-1200">
+				<el-col  :span="12">
+					<div class="experience-cover-wrap">
+						<div class="experience-cover">
+							<div class="sb-interior-frame">
+								<img src="@/static/images/interior.jpg" alt="interior" class="sb-interior">
+							</div>
+							<div class="sb-square"></div>
+							<div class="sb-cirkle-1"></div>
+							<div class="sb-cirkle-2"></div>
+							<div class="sb-cirkle-3"></div>
+							<div class="sb-cirkle-4"></div>
+							<div class="sb-experience">
+							<div class="sb-exp-content">
+								<p class="sb-h1 sb-mb-10">26</p>
+								<p class="sb-h3">Years Experiences</p>
+							</div>
+							</div>
+						</div>
+						
+					</div>
+				</el-col>
+				<el-col  :span="12">
+					<div class="Experience-list">
+						<div class="col-lg-6 align-self-center mb-30">
+								<h2 class="sb-mb-60">You are doing more than <br>you expect</h2>
+								<ul class="sb-features">
+									<li class="sb-features-item mb-60">
+										<div class="sb-number">01</div>
+										<div class="sb-feature-text">
+											<h3 class="sb-mb-15">Meet</h3>
+											<p class="sb-text">Porro nemo veniam necessitatibus praesentium eligendi rem temporibus adipisci quo modi numquam.</p>
+										</div>
+									</li>
+									<li class="sb-features-item mb-60">
+										<div class="sb-number">02</div>
+										<div class="sb-feature-text">
+											<h3 class="sb-mb-15">Work</h3>
+											<p class="sb-text">Consectetur numquam porro nemo veniam necessitatibus praesentium eligendi rem temporibus adipisci quo modi.</p>
+										</div>
+									</li>
+									<li class="sb-features-item mb-60">
+										<div class="sb-number">03</div>
+										<div class="sb-feature-text">
+											<h3 class="sb-mb-15">Birthday</h3>
+											<p class="sb-text">Necessitatibus praesentium eligendi rem temporibus adipisci quo modi. Lorem ipsum dolor sit.</p>
+										</div>
+									</li>
+								</ul>
+						</div>
+					</div>
+				</el-col>
+			</el-row>
+		</section>
+		<!--  -->
+		<section class="image-swiper-section p-b-60">
+			<el-row>
+				<el-col :span="24">
+					<div class="container-wrap w-1200">
+						<!-- slider-navgation -->
+						<div class="sb-slider-nav flex-wrap">
+							<div class="sb-prev-btn sb-slider-btn sb-short-menu-prev">
+								<el-icon :size="14"><Back /></el-icon>
+								
+							</div>
+							<div class="sb-next-btn sb-slider-btn sb-short-menu-next">
+								<el-icon :size="14"><Right /></el-icon>
+							</div>
+						</div>
+						<swiper
+							:modules="modules"
+							:slides-per-view="3"
+							:space-between="50"
+							:navigation="{  
+								nextEl: '.sb-next-btn',
+    							prevEl: '.sb-prev-btn',
+								disabledClass: 'my-button-disabled',
+							}"
+							@swiper="onSwiper"
+							@slideChange="onSlideChange"
+						>
+							<swiper-slide>
+								<div class="w-fill-img image-cover">
+									<img mode="aspectFill" src="@/static/images/interior.jpg" alt="">
+								</div>
+							</swiper-slide>
+							<swiper-slide>
+								<div class="w-fill-img image-cover">
+									<img src="@/static/images/interior.jpg" alt="">
+								</div>
+							</swiper-slide>
+							<swiper-slide>
+								<div class="w-fill-img image-cover">
+									<img src="@/static/images/interior.jpg" alt="">
+								</div>
+							</swiper-slide>
+							<swiper-slide>
+								<div class="w-fill-img image-cover">
+									<img src="@/static/images/interior.jpg" alt="">
+								</div>
+							</swiper-slide>
+						</swiper>
+					</div>
+				</el-col>
+			</el-row>
+		</section>
+		<!--  -->
+		<section class="">
+			<svg width="100" height="100">
+				<circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="red" />
+			</svg>
+
 		</section>
     </div>
 </template>
+
+<script setup>
+import { Navigation } from 'swiper/modules';
+
+// Import Swiper Vue.js components
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import 'swiper/css';
+
+import Api from '@/apis/index'
+
+	const modules = [Navigation]
+	const onSwiper = (swiper) => {
+			console.log(swiper);
+    };
+	const onSlideChange = () => {
+		console.log('slide change');
+	};
+
+
+
+	const param1 = ref('value1')
+
+	//  useFetch('http://101.35.18.18:8777/m_yimin_v3/api/more_news').then(({data,error})=>{
+	// 	console.log('datadatadata',data)
+	// 	console.log('errerrerrerr',error)
+
+	//  })
+Api.getNewsList({
+	page:2
+}).then(res=>{
+	console.log("res77777777777",res)
+}).catch(err=>{
+	console.log("err7777777",err)
+})
+	// console.log('resres',res)
+	// // console.log('pending',pending)
+	// // console.log('error',error)
+	// // console.log('refresh',refresh)
+
+
+	// const res2 = await useAsyncData(
+	// 	'mountains',
+	// 	() => $fetch('http://101.35.18.18:8777/m_yimin_v3/api/more_news?page=2')
+	// )
+	// console.log('resres22222',res2)
+
+
+</script>
 <style lang="scss" scoped>
 .left-box{
 	height: 100vh;
@@ -193,5 +352,65 @@ h1{
 		}
 	}
 	
+}
+
+.experience-wrap{
+	.experience-cover-wrap{
+		width: 100%;
+		padding: 0 15px;
+	}
+	.experience-cover{
+		position: relative;
+		height: 70vh;
+		
+		.sb-interior-frame{
+			position: absolute;
+			overflow: hidden;
+			z-index: 2;
+			width: 80%;
+			height: 90%;
+			bottom: 10%;
+			left: 0;
+			box-shadow: 0 6px 8px -6px rgba(0, 0, 0, 0.1);
+			img{
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				object-position: bottom;
+				animation: zoom 30s infinite ease-in-out;
+			}
+		}
+		.sb-square {
+			right: 0;
+			bottom: 0;
+			position: absolute;
+			z-index: 1;
+			width: 70%;
+			height: 80%;
+			background-color: #F9FAFC;
+		}
+	}
+}
+
+.image-swiper-section{
+	.image-cover{
+		width: 100%;
+		height: 300px;
+	}
+
+	.sb-slider-btn{
+		height: 50px;
+		width: 50px;
+		font-size: 12px;
+		border-radius: 50%;
+		border: solid 2px #231E41;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		cursor: pointer;
+	}
+	.my-button-disabled {
+		opacity: 0.2;
+	}
 }
 </style>

@@ -337,7 +337,7 @@
 
 "@element-plus/icons-vue@^2.3.1":
   version "2.3.1"
-  resolved "https://registry.npmjs.org/@element-plus/icons-vue/-/icons-vue-2.3.1.tgz"
+  resolved "https://registry.yarnpkg.com/@element-plus/icons-vue/-/icons-vue-2.3.1.tgz#1f635ad5fdd5c85ed936481525570e82b5a8307a"
   integrity sha512-XxVUZv48RZAd87ucGS48jPf6pKu0yV5UCg9f4FFwtrYxXOwWuVJo6wOvSLKEoMQKjv8GsX/mhP6UsC1lRwbUWg==
 
 "@element-plus/nuxt@^1.0.9":
@@ -5339,6 +5339,11 @@ svgo@^3.2.0:
     css-what "^6.1.0"
     csso "^5.0.5"
     picocolors "^1.0.0"
+
+swiper@^11.1.4:
+  version "11.1.4"
+  resolved "https://registry.yarnpkg.com/swiper/-/swiper-11.1.4.tgz#2f8e303e8bf9e5bc40a3885fc637ae60ff27996c"
+  integrity sha512-1n7kbYJB2dFEpUHRFszq7gys/ofIBrMNibwTiMvPHwneKND/t9kImnHt6CfGPScMHgI+dWMbGTycCKGMoOO1KA==
 
 system-architecture@^0.1.0:
   version "0.1.0"

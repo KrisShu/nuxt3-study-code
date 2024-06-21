@@ -3,10 +3,11 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   srcDir:'src/',
   plugins: [
-    '~/plugins/test' // 引入刚刚定义的plugin
+    '~/plugins/test', // 引入刚刚定义的plugins
   ],
   modules: [
     '@element-plus/nuxt',
+    
   ],
   css: [
     '~/static/styles/common.css',

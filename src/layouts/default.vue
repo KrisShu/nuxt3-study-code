@@ -1,8 +1,8 @@
 <template>
 	
 	<div class="container-wrap">
-		<header class="header-wrap">
-			<div class="container w-1200 flex-wrap a-center j-between">
+		<header class="header-wrap" :class="scrollHeight>0 ?'header-wrap-fix':''">
+			<div class="container w-1200 flex-wrap a-center j-between" :class="scrollHeight>0 ?'containerfix':''">
 			<div class="logo-wrap">
 				<a href="#">
 					<img src="@/static/images/logo.svg" alt="logo">
@@ -34,6 +34,15 @@
 	</div>
 </template>
 
+<script setup>
+	const scrollHeight = ref(0)
+	onMounted(()=>{
+		window.addEventListener('scroll', ()=>{
+			scrollHeight.value = window.scrollY
+		});	
+	})
+</script>
+
 <style lang="scss" scoped>
 .header-wrap{
 	width: 100%;
@@ -44,8 +53,18 @@
     right: 0;
     border-bottom: solid 1px #F2F3F5;
     border-top: solid 1px #F2F3F5;
+	&.header-wrap-fix{
+		box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+	}
 	.container{
 		height: 120px;
+		background: #fff;
+		transition: 0.3s ease-in-out;
+	}
+	.containerfix{
+		height: 100px;
+		background-color: rgba(255, 255, 255, 0.92);
+		backdrop-filter: blur(8px);
 	}
 	.nav-li{
 		a{
@@ -76,6 +95,4 @@
 		}	
 	}
 }
-
-	
 </style>
